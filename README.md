@@ -41,7 +41,7 @@ The Emoji Match Game is a fun and interactive browser-based game where players m
 ## Setup and Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/emoji-match-game.git
+   git clone https://github.com/Termication/re4do.git
    cd emoji-match-game
    ```
 
@@ -55,7 +55,7 @@ The Emoji Match Game is a fun and interactive browser-based game where players m
    ```
 
 3. **Run the Project**:
-   Open the `index.html` file in any modern web browser.
+   Open the `game.html` file in any modern web browser.
 
 ---
 
@@ -73,7 +73,7 @@ The Emoji Match Game is a fun and interactive browser-based game where players m
 ## Project Structure
 ```
 emoji-match-game/
-├── index.html        # Main HTML file for the game
+├── game.html        # Main HTML file for the game
 ├── style.css         # Embedded or external CSS styles
 ├── script.js         # Game logic and interactivity
 ├── README.md         # Project documentation
