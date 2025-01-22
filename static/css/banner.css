@@ -12,18 +12,21 @@
 
 #banner {
     display: none;
+    position: fixed;
+    top: 130px;
+    left: 11%;
+    transform: translate(-50%, 0);
     padding: 15px;
-    margin: 20px auto;
     width: 90%;
-    max-width: 600px;
+    max-width: 400px;
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 8px;
     height: 60px;
     text-align: center;
-    transform: translateX(100%);
     opacity: 0;
     transition: opacity 0.5s, transform 0.5s;
+    z-index: 10;
 }
 
 #banner.correct {
@@ -44,8 +47,8 @@
     border: 1px solid #ffeeba;
 }
 
-/* Add the animation class for sliding in */
 #banner.show {
     display: block;
     animation: slide-in-right 0.5s forwards;
+    opacity: 1;
 }
