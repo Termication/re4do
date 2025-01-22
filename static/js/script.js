@@ -13,8 +13,9 @@ function updateScore(change) {
 
 function showBanner(message, type) {
     bannerElement.textContent = message;
-    bannerElement.className = type; // Set the appropriate banner class (correct, wrong, timeout)
+    bannerElement.className = `show ${type}`; // Set the appropriate banner class (correct, wrong, timeout)
     bannerElement.style.display = 'block';
+    
     setTimeout(() => {
         bannerElement.style.display = 'none';
     }, 2000); // Hide the banner after 2 seconds
