@@ -91,5 +91,16 @@ emoji-match-game/
 
 ---
 
+## AUTHORS
+
+<details>
+    <summary>Innocent Karabo Mohlala</summary>
+    <ul>
+    <li><a href="https://www.github.com/termication">Github</a></li>
+    <li><a href="https://www.twitter.com/Termication_">Twitter</a></li>
+    <li><a href="mailto:terminalkarabo@gmail.com">e-mail</a></li>
+    </ul>
+</details>
+
 Enjoy the game and feel free to contribute or suggest improvements!
 
