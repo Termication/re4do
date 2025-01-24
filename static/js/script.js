@@ -15,7 +15,7 @@ function showBanner(message, type) {
     bannerElement.textContent = message;
     bannerElement.className = `show ${type}`; // Set the appropriate banner class (correct, wrong, timeout)
     bannerElement.style.display = 'block';
-    
+
     setTimeout(() => {
         bannerElement.style.display = 'none';
     }, 2000); // Hide the banner after 2 seconds
@@ -45,6 +45,7 @@ function renderGame(data) {
         emojiButton.textContent = emoji;
 
         emojiButton.onclick = () => {
+
             if (emoji === target) {
                 updateScore(5);
                 showBanner('Correct! 🎉', 'correct');
@@ -52,6 +53,7 @@ function renderGame(data) {
                 updateScore(-2);
                 showBanner('Wrong! 😢', 'wrong');
             }
+
             fetchNewRound();
         };
 
