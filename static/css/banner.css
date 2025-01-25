@@ -10,6 +10,7 @@
     }
 }
 
+/* Define the banner styles */
 #banner {
     display: none;
     position: fixed;
@@ -29,6 +30,7 @@
     z-index: 10;
 }
 
+/* Define the banner styles for different scenarios */
 #banner.correct {
     background-color: #d4edda;
     color: #155724;
