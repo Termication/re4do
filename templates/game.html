@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emoji Match Game</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/banner.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/play.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -12,10 +13,20 @@
         <h1>Emoji Match Game</h1>
         <div id="score">Score: 0</div>
     </div>
+
     <div id="countdown">Time left: 5s</div>
     <div id="target-emoji">😄</div>
     <div id="banner"></div>
     <div id="options"></div>
+
+    <!-- Pop up Modal -->
+    <div id="popup-modal" class="modal">
+        <div class="modal-content">
+            <button id="play-button" class="play-btn">Play</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/play.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
