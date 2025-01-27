@@ -73,6 +73,9 @@ function startCountdown(seconds) {
 
         if (timeLeft <= 0) {
             clearInterval(countdownTimer);
+
+            updateScore(-1);
+            
             showBanner('Time\'s up! ⏰', 'timeout');
             fetchNewRound();
         }
