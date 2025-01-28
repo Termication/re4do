@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Pause game until play icon is clicked
     let isGameStarted = false;
 
+
+{   // Function to start the game
+    function startGame() {
+        isGameStarted = true;
+        modal.style.display = 'none'; // Hide play button popup
+        fetchNewRound(); // Now start the game
+    }}
+    
     // Hide modal and start the game when Play is clicked
     playButton.onclick = () => {
         modal.style.display = 'none'; // Hide the modal
