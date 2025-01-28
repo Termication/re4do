@@ -16,7 +16,7 @@ def index():
     session['game_started'] = False  # Ensure game is paused on first load
     return render_template('game.html')
 
-@app.route('/start-game', methods=['POST'])
+@app.route('/start-game', methods=['GET', 'POST'])
 def start_game():
     session['game_started'] = True
     return jsonify({"status": "Game started"})
