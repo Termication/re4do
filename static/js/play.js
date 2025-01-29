@@ -2,25 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('popup-modal');
     const playButton = document.getElementById('play-button');
 
+    // Pause game until play icon is clicked
     let isGameStarted = false;
 
-    playButton.onclick = () => {
-        fetch('/start-game', { method: 'POST' })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Start Game Response:", data);  // Debugging line
-                if (data.status === "Game started") {
-                    modal.style.display = 'none';
-                    fetchNewRound();
-                }
-            })
-            .catch(error => console.error("Error starting game:", error));
-    };
+
+{   // Function to start the game
+    function startGame() {
+        isGameStarted = true;
+        modal.style.display = 'none'; // Hide play button popup
+        fetchNewRound(); // Now start the game
+    }}
     
-    // Ensure the game stays paused initially
+    // Hide modal and start the game when Play is clicked
+    playButton.onclick = () => {
+        modal.style.display = 'none'; // Hide the modal
+        isGameStarted = true;        // Mark the game as started
+        fetchNewRound();             // Start the game
+    };
+
+    // Prevent game actions (pause background) until play is clicked
     if (!isGameStarted) {
-        optionsElement.innerHTML = '';
-        targetEmojiElement.textContent = '🎮'; // Placeholder emoji before game starts
-        countdownElement.textContent = 'Time left: 0s';
+        optionsElement.innerHTML = ''; // Clear any options
+        countdownElement.textContent = 'Time left: 0s'; // Pause timer display
     }
 });
