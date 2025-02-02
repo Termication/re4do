@@ -7,7 +7,11 @@ const scoreElement = document.getElementById('score');
 const bannerElement = document.getElementById('banner');
 
 function updateScore(change) {
-    score += change;
+    if (score + change < 0) {
+        score = 0;
+    } else {
+        score += change;
+    }
     scoreElement.textContent = `Score: ${score}`;
 }
 
