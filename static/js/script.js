@@ -84,6 +84,29 @@ function startCountdown(seconds) {
             fetchNewRound();
         }
     }, 1000);
+
+    
+        submitUserButton.onclick = () => {
+            const name = document.getElementById('name').value;
+            const country = document.getElementById('country').value;
+            const city = document.getElementById('city').value;
+
+            fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, country, city })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                } else {
+                    userModal.style.display = 'none';
+                    fetchNewRound();  // Start the game after registration
+                }
+            })
+            .catch(err => console.error('Error:', err));
+        };
 }
 
 fetchNewRound();
