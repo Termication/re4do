@@ -19,14 +19,18 @@
     <div id="banner"></div>
     <div id="options"></div>
 
-    <!-- Pop up Modal -->
-    <!-- <div id="popup-modal" class="modal">
+    <!-- User Info Modal -->
+    <div id="user-modal" class="modal">
         <div class="modal-content">
-            <button id="play-button" class="play-btn">
-                <img src="{{ url_for('static', filename='icons/play-icon.png') }}" alt="Play" class="play-icon">
-            </button>
+            <h2>Enter Your Details</h2>
+            <form id="user-info-form">
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <input type="text" id="country" placeholder="Enter your country" required>
+                <input type="text" id="city" placeholder="Enter your city" required>
+                <button type="submit">Start Game</button>
+            </form>
         </div>
-    </div> -->
+    </div>
 
     <script src="{{ url_for('static', filename='js/play.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
