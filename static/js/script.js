@@ -85,36 +85,6 @@ function startCountdown(seconds) {
         }
     }, 1000);
 
-    
-    document.addEventListener("DOMContentLoaded", () => {
-        const userModal = document.getElementById('user-modal');
-        const userInfoForm = document.getElementById('user-info-form');
-    
-        userInfoForm.addEventListener("submit", (event) => {
-            event.preventDefault();  // Prevent the form from reloading the page
-    
-            const name = document.getElementById('name').value;
-            const country = document.getElementById('country').value;
-            const city = document.getElementById('city').value;
-    
-            fetch('/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, country, city })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    alert(data.error);
-                } else {
-                    userModal.style.display = 'none';  // Hide the modal
-                    fetchNewRound();  // Start the game
-                }
-            })
-            .catch(err => console.error('Error:', err));
-        });
-    });
-    
 }
 
 fetchNewRound();
