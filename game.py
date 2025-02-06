@@ -74,6 +74,7 @@ def new_round():
 @app.route('/save-score', methods=['POST'])
 def save_score():
     if 'user_id' not in session:
+        
         return jsonify({'status': 'error'}), 401
     
     user = User.query.get(session['user_id'])
@@ -83,8 +84,8 @@ def save_score():
     # Update user's total score
     user.score = new_score
     # Create new game session
-    session = GameSession(user_id=user.id, score=new_score)
-    db.session.add(session)
+    game_session = GameSession(user_id=user.id, score=new_score)
+    db.session.add(game_session)
     db.session.commit()
     
     return jsonify({'status': 'success'})
