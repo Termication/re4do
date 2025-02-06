@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
+    {% if 'user_id' not in session %}
+    <script>window.location.href = "/register";</script>
+    {% endif %}
+
     <div id="header">
         <h1>Emoji Match Game</h1>
         <div id="score">Score: 0</div>
@@ -18,19 +23,6 @@
     <div id="target-emoji">😄</div>
     <div id="banner"></div>
     <div id="options"></div>
-
-    <!-- User Info Modal
-    <div id="user-modal" class="modal">
-        <div class="modal-content">
-            <h2>Enter Your Details</h2>
-            <form id="user-info-form">
-                <input type="text" id="name" placeholder="Enter your name" required>
-                <input type="text" id="country" placeholder="Enter your country" required>
-                <input type="text" id="city" placeholder="Enter your city" required>
-                <button type="submit">Start Game</button>
-            </form>
-        </div>
-    </div> -->
 
     <script src="{{ url_for('static', filename='js/play.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
