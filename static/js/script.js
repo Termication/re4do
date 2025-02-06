@@ -13,6 +13,15 @@ function updateScore(change) {
         score += change;
     }
     scoreElement.textContent = `Score: ${score}`;
+    
+    // Save score to database
+    fetch('/save-score', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ score: score })
+    });
 }
 
 function showBanner(message, type) {
@@ -87,4 +96,6 @@ function startCountdown(seconds) {
 
 }
 
-fetchNewRound();
+if (!window.location.pathname.includes('/register')) {
+    fetchNewRound();
+}
