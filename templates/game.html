@@ -10,13 +10,17 @@
 </head>
 <body>
 
+    <script>
+        let initialScore = {{ current_score }};
+    </script>
+
     {% if 'user_id' not in session %}
     <script>window.location.href = "/register";</script>
     {% endif %}
 
     <div id="header">
         <h1>Emoji Match Game</h1>
-        <div id="score">Score: 0</div>
+        <div id="score">Score: {{ current_score }}</div>
     </div>
 
     <div id="countdown">Time left: 5s</div>
@@ -24,7 +28,6 @@
     <div id="banner"></div>
     <div id="options"></div>
 
-    <script src="{{ url_for('static', filename='js/play.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

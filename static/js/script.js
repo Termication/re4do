@@ -1,10 +1,11 @@
 let countdownTimer;
-let score = 0;
+let score = typeof initialScore !== 'undefined' ? initialScore : 0; // initialScore is defined in the HTML template
 const countdownElement = document.getElementById('countdown');
 const targetEmojiElement = document.getElementById('target-emoji');
 const optionsElement = document.getElementById('options');
 const scoreElement = document.getElementById('score');
 const bannerElement = document.getElementById('banner');
+scoreElement.textContent = `Score: ${score}`;
 
 function updateScore(change) {
     if (score + change < 0) {
