@@ -22,6 +22,7 @@ The Emoji Match Game is a fun and interactive browser-based game where players m
 - **Scoring System**:
   - Correct matches: +5 points
   - Incorrect matches: -2 points
+  - Time up matches: -1 point
 - **Countdown Timer**: Players must make a match before the time runs out.
 - **Feedback Banner**:
   - Displays messages for correct, incorrect, and timeout events.
