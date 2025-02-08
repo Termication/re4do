@@ -42,19 +42,33 @@ def index():
     if 'user_id' not in session:
         return redirect(url_for('register'))
     
+    # Get user with error handling
     user = User.query.get(session['user_id'])
+    
+    if not user:
+        # Clear invalid session
+        session.pop('user_id', None)
+        return redirect(url_for('register'))
+    
     return render_template('game.html', current_score=user.score)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        username = request.form['username']
+        username = request.form['username'].strip()
+        if not username:
+            return redirect(url_for('register'))
+        
         user = User.query.filter_by(username=username).first()
         
         if not user:
-            user = User(username=username)
-            db.session.add(user)
-            db.session.commit()
+            try:
+                user = User(username=username)
+                db.session.add(user)
+                db.session.commit()
+            except Exception as e:
+                db.session.rollback()
+                return "Error creating user", 500
         
         session['user_id'] = user.id
         return redirect(url_for('index'))
