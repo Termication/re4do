@@ -100,7 +100,7 @@ def save_score():
     # Update user's total score
     user.score = new_score
     # Create new game session
-    game_session = GameSession(user_id=user.id, score=new_score)
+    game_session = GameSession(user_id=user.id, score=new_score, username=user.username)
     db.session.add(game_session)
     db.session.commit()
     
