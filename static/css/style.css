@@ -17,6 +17,13 @@ body {
     margin: 0;
     font-size: 1.5rem;
 }
+
+#player-name {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.2em;
+}
+
 #header div {
     font-size: 1.2rem;
 }
